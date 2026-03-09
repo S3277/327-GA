@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartBar as BarChart3, Zap, TrendingUp } from 'lucide-react';
+import { Users, DollarSign, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ServiceCardProps {
@@ -25,17 +25,17 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      icon: <BarChart3 />,
+      icon: <Users />,
       title: t.services.funnel.title,
       description: t.services.funnel.description,
     },
     {
-      icon: <Zap />,
+      icon: <DollarSign />,
       title: t.services.automation.title,
       description: t.services.automation.description,
     },
     {
-      icon: <TrendingUp />,
+      icon: <MessageSquare />,
       title: t.services.analytics.title,
       description: t.services.analytics.description,
     },
@@ -51,7 +51,7 @@ const Services: React.FC = () => {
             <span className='text-gradient italic font-light'>{t.services.subtitle}</span>
           </h3>
         </div>
-        
+
         <div className='grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-800 border border-slate-800'>
           {services.map((service, index) => (
             <ServiceCard
