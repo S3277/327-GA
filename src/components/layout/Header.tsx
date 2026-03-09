@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from '../ui/theme-toggle';
+import { LanguageToggle } from '../ui/theme-toggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               className='h-14 w-14 rounded object-cover'
             />
             <span className='text-xl font-bold tracking-tighter uppercase text-slate-100'>
-              327 <span className='text-primary'>Growth Architect</span>
+            <span className='text-primary'>Growth Architect</span>
             </span>
           </div>
 
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
               About
             </a>
             <div className='h-4 w-px bg-slate-700'></div>
-            <ThemeToggle />
+            <LanguageToggle />
           </nav>
 
           <div className='flex items-center gap-4'>
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
                 About
               </a>
               <div className='flex justify-start py-2'>
-                <ThemeToggle />
+                <LanguageToggle />
               </div>
             </div>
           </nav>
