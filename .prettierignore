@@ -1,0 +1,9 @@
+dist
+build
+node_modules
+*.min.js
+*.min.css
+.env*
+README.md
+package-lock.json
+yarn.lock

@@ -1,0 +1,103 @@
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { LanguageToggle } from '../ui/theme-toggle';
+import { useLanguage } from '../../contexts/LanguageContext';
+
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className='sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md'>
+      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+        <div className='flex h-20 items-center justify-between'>
+          <div className='flex items-center gap-3'>
+            <img 
+              src='/IMG_3904.png' 
+              alt='327 Growth Architect Logo' 
+              className='h-14 w-14 rounded object-cover'
+            />
+            <span className='text-xl font-bold tracking-tighter uppercase text-slate-100'>
+            <span className='text-primary'>Growth Architect</span>
+            </span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className='hidden md:flex items-center gap-10'>
+            <a
+              className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+              href='#services'
+            >
+              {t.nav.services}
+            </a>
+            <a
+              className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+              href='#framework'
+            >
+              {t.nav.framework}
+            </a>
+            <a
+              className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+              href='#about'
+            >
+              {t.nav.about}
+            </a>
+            <div className='h-4 w-px bg-slate-700'></div>
+            <LanguageToggle isEnglish={language === 'en'} onToggle={toggleLanguage} />
+          </nav>
+
+          <div className='flex items-center gap-4'>
+            <button className='bg-primary text-background-dark px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-all rounded'>
+              {t.nav.bookCall}
+            </button>
+            <button
+              className='md:hidden text-slate-100 hover:text-primary transition-colors'
+              onClick={toggleMenu}
+              aria-label='Toggle menu'
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className='md:hidden py-4 border-t border-slate-700'>
+            <div className='flex flex-col space-y-4'>
+              <a
+                className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+                href='#services'
+                onClick={toggleMenu}
+              >
+                {t.nav.services}
+              </a>
+              <a
+                className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+                href='#framework'
+                onClick={toggleMenu}
+              >
+                {t.nav.framework}
+              </a>
+              <a
+                className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
+                href='#about'
+                onClick={toggleMenu}
+              >
+                {t.nav.about}
+              </a>
+              <div className='flex justify-start py-2'>
+                <LanguageToggle isEnglish={language === 'en'} onToggle={toggleLanguage} />
+              </div>
+            </div>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
