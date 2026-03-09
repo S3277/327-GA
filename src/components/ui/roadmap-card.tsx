@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export interface RoadmapItem {
@@ -16,19 +16,13 @@ export interface RoadmapCardProps {
 }
 
 export function RoadmapCard({
-  title = "Product Roadmap",
-  description = "Upcoming features and releases",
   items,
 }: RoadmapCardProps) {
   return (
-    <Card className="w-full max-w-4xl shadow-xl hover:shadow-lg transiton-all duration-300">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription >{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Card className="w-full max-w-4xl bg-slate-900/50 border-slate-800">
+      <CardContent className="pt-6">
         <div className="relative">
-          <div className="absolute left-0 right-0 top-4 h-px bg-border" />
+          <div className="absolute left-0 right-0 top-4 h-px bg-primary/20" />
 
           <div className="flex justify-between">
           {items.map((item, index) => (
@@ -44,10 +38,10 @@ export function RoadmapCard({
                   className={`absolute left-1/2 top-2 -translate-x-1/2 h-4 w-4 rounded-full flex items-center justify-center ${
                     item.status === "done" || item.status === "in-progress"
                       ? "bg-primary"
-                      : "bg-muted"
+                      : "bg-slate-700"
                   }`}
                 >
-                  <div className="h-1.5 w-1.5 rounded-full bg-background" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-900" />
                 </motion.div>
 
                 <Badge
@@ -56,13 +50,13 @@ export function RoadmapCard({
                       ? "default"
                       : "outline"
                   }
-                  className="mb-1 text-[11px]"
+                  className="mb-2 text-[11px]"
                 >
                   {item.quarter}
                 </Badge>
 
-                <h4 className="text-sm font-medium">{item.title}</h4>
-                <p className="text-xs text-muted-foreground mt-1">
+                <h4 className="text-sm font-bold text-slate-100 uppercase mb-1">{item.title}</h4>
+                <p className="text-xs text-slate-400 mt-1">
                   {item.description}
                 </p>
               </motion.div>

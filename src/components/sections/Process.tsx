@@ -8,40 +8,40 @@ const Process: React.FC = () => {
 
   const roadmapItems = [
     {
-      quarter: t.process.step1.title,
-      title: '5-10k/mo',
+      quarter: 'Step 1',
+      title: t.process.step1.title,
       description: t.process.step1.description,
       status: 'done' as const,
     },
     {
-      quarter: t.process.step2.title,
-      title: '10-30k/mo',
+      quarter: 'Step 2',
+      title: t.process.step2.title,
       description: t.process.step2.description,
       status: 'in-progress' as const,
     },
     {
-      quarter: t.process.step3.title,
-      title: '30-70k/mo',
+      quarter: 'Step 3',
+      title: t.process.step3.title,
       description: t.process.step3.description,
       status: 'upcoming' as const,
     },
     {
-      quarter: t.process.step4.title,
-      title: '70k-100k+/mo',
+      quarter: 'Step 4',
+      title: t.process.step4.title,
       description: t.process.step4.description,
       status: 'upcoming' as const,
     },
   ];
 
   return (
-    <section className='relative py-48 border-y border-primary/10' id='framework'>
+    <section className='relative py-24 border-y border-primary/10' id='framework'>
       <div className='absolute inset-0 z-0 opacity-10 pointer-events-none'>
         <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.2)' />
       </div>
 
       <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col items-center'>
-          <h2 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-16 text-center'>
+          <h2 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-12 text-center'>
             {t.process.title} <br />
             <span className='text-primary italic'>{t.process.subtitle}</span>
           </h2>

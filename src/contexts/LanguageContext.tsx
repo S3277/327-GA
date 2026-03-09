@@ -99,11 +99,11 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: '"Creator Bottleneck"',
       funnel: {
         title: 'Custom Ecosystem Design',
-        description: 'I build your community and billing infrastructure (Discord + Wise) to maximize margins and automate access.',
+        description: 'I build your community and billing infrastructure (Discord + payment processor) to maximize margins and automate access.',
       },
       automation: {
         title: 'Performance Talent Recruitment',
-        description: 'I don\'t just "find" setters; I install trained "Elite Pilots" who are managed by my internal systems to ensure high-performance daily.',
+        description: 'I install trained "Elite Pilots" who are managed by my internal systems to ensure high-performance daily.',
       },
       analytics: {
         title: 'Engineering-Grade Optimization',
@@ -120,7 +120,7 @@ const translations: { en: Translations; fr: Translations } = {
       },
       step2: {
         title: 'The System Build',
-        description: 'I install a custom, automated backend (Discord/Wise/Make) to handle your payments and member access.',
+        description: 'I install a custom, automated backend (Discord/payment processor/Make) to handle your payments and member access.',
       },
       step3: {
         title: 'The Talent Deployment',
@@ -175,11 +175,11 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: '"Goulot du Créateur"',
       funnel: {
         title: 'Conception d\'Écosystème Personnalisé',
-        description: 'Je construis votre infrastructure communautaire et de facturation (Discord + Wise) pour maximiser les marges et automatiser l\'accès.',
+        description: 'Je construis votre infrastructure communautaire et de facturation (Discord + processeur de paiement) pour maximiser les marges et automatiser l\'accès.',
       },
       automation: {
         title: 'Recrutement de Talents Performants',
-        description: 'Je ne "trouve" pas seulement des closers; j\'installe des "Pilotes d\'Élite" formés qui sont gérés par mes systèmes internes pour garantir une haute performance quotidienne.',
+        description: 'J\'installe des "Pilotes d\'Élite" formés qui sont gérés par mes systèmes internes pour garantir une haute performance quotidienne.',
       },
       analytics: {
         title: 'Optimisation de Niveau Ingénierie',
@@ -196,7 +196,7 @@ const translations: { en: Translations; fr: Translations } = {
       },
       step2: {
         title: 'La Construction du Système',
-        description: 'J\'installe un backend personnalisé et automatisé (Discord/Wise/Make) pour gérer vos paiements et l\'accès des membres.',
+        description: 'J\'installe un backend personnalisé et automatisé (Discord/processeur de paiement/Make) pour gérer vos paiements et l\'accès des membres.',
       },
       step3: {
         title: 'Le Déploiement des Talents',
