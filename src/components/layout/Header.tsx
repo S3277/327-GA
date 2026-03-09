@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { LanguageToggle } from '../ui/theme-toggle';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,27 +32,27 @@ const Header: React.FC = () => {
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#services'
             >
-              Services
+              {t.nav.services}
             </a>
             <a
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#framework'
             >
-              Framework
+              {t.nav.framework}
             </a>
             <a
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#about'
             >
-              About
+              {t.nav.about}
             </a>
             <div className='h-4 w-px bg-slate-700'></div>
-            <LanguageToggle />
+            <LanguageToggle isEnglish={language === 'en'} onToggle={toggleLanguage} />
           </nav>
 
           <div className='flex items-center gap-4'>
             <button className='bg-primary text-background-dark px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-all rounded'>
-              Book Strategy Call
+              {t.nav.bookCall}
             </button>
             <button
               className='md:hidden text-slate-100 hover:text-primary transition-colors'
@@ -71,24 +73,24 @@ const Header: React.FC = () => {
                 href='#services'
                 onClick={toggleMenu}
               >
-                Services
+                {t.nav.services}
               </a>
               <a
                 className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
                 href='#framework'
                 onClick={toggleMenu}
               >
-                Framework
+                {t.nav.framework}
               </a>
               <a
                 className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
                 href='#about'
                 onClick={toggleMenu}
               >
-                About
+                {t.nav.about}
               </a>
               <div className='flex justify-start py-2'>
-                <LanguageToggle />
+                <LanguageToggle isEnglish={language === 'en'} onToggle={toggleLanguage} />
               </div>
             </div>
           </nav>

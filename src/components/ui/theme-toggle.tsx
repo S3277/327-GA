@@ -1,15 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface LanguageToggleProps {
-  className?: string
+  isEnglish: boolean;
+  onToggle: () => void;
+  className?: string;
 }
 
-export function LanguageToggle({ className }: LanguageToggleProps) {
-  const [isEnglish, setIsEnglish] = useState(true)
-
+export function LanguageToggle({ isEnglish, onToggle, className }: LanguageToggleProps) {
   return (
     <div
       className={cn(
@@ -17,7 +16,7 @@ export function LanguageToggle({ className }: LanguageToggleProps) {
         "bg-zinc-950 border border-zinc-800",
         className
       )}
-      onClick={() => setIsEnglish(!isEnglish)}
+      onClick={onToggle}
       role="button"
       tabIndex={0}
     >
