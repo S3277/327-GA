@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChartBar as BarChart3, Zap, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { useParallax } from '../../hooks/useParallax';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -10,16 +9,9 @@ interface ServiceCardProps {
   index: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, index }) => {
-  const parallaxOffset = useParallax(0.15 + index * 0.05);
-
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   return (
-    <div
-      className='bg-background-dark p-12 group hover:bg-primary/[0.02] transition-colors'
-      style={{
-        transform: `translateY(${parallaxOffset}px)`
-      }}
-    >
+    <div className='bg-background-dark p-12 group hover:bg-primary/[0.02] transition-colors'>
       <div className='text-primary text-4xl mb-8'>{icon}</div>
       <h4 className='text-2xl font-bold text-slate-100 mb-4 uppercase'>{title}</h4>
       <p className='text-slate-400 font-light leading-relaxed mb-8'>{description}</p>
