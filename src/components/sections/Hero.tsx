@@ -3,6 +3,7 @@ import { ChevronDown, Building2 } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Button05 } from '../ui/arrow-dots-button';
 import { useParallax, useScrollOpacity } from '../../hooks/useParallax';
+import { BGPattern } from '../ui/bg-pattern';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -12,13 +13,15 @@ const Hero: React.FC = () => {
   return (
     <section className='relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-primary/5'>
       <div
-        className='absolute inset-0 z-0 opacity-20 pointer-events-none grid-background'
+        className='absolute inset-0 z-0 opacity-20 pointer-events-none'
         style={{
           transform: `translateY(${parallaxOffset}px)`,
           opacity: opacity * 0.2
         }}
         aria-hidden='true'
-      ></div>
+      >
+        <BGPattern variant='dots' mask='fade-edges' size={32} fill='rgba(255,255,255,0.3)' />
+      </div>
 
       <div
         className='relative z-10 mx-auto max-w-5xl px-4 text-center'
