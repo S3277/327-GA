@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 
 export const useZoomScroll = (elementRef: React.RefObject<HTMLElement>) => {
-  const [scale, setScale] = useState(1);
-  const [opacity, setOpacity] = useState(0);
+  const [zoomScale, setZoomScale] = useState(1);
+  const [contentOpacity, setContentOpacity] = useState(1);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -19,25 +19,21 @@ export const useZoomScroll = (elementRef: React.RefObject<HTMLElement>) => {
         const elementTop = rect.top;
         const elementHeight = rect.height;
 
-        const scrollProgress = Math.max(
-          0,
-          Math.min(1, (viewportHeight - elementTop) / (viewportHeight + elementHeight))
-        );
+        const scrollStart = viewportHeight * 0.5;
+        const scrollEnd = -elementHeight * 0.5;
 
-        const zoomStart = 0.2;
-        const zoomEnd = 0.8;
-
-        if (scrollProgress < zoomStart) {
-          setScale(0.5);
-          setOpacity(0);
-        } else if (scrollProgress > zoomEnd) {
-          setScale(1);
-          setOpacity(1);
+        if (elementTop > scrollStart) {
+          setZoomScale(1);
+          setContentOpacity(1);
+        } else if (elementTop < scrollEnd) {
+          setZoomScale(10);
+          setContentOpacity(0);
         } else {
-          const progress = (scrollProgress - zoomStart) / (zoomEnd - zoomStart);
-          const easeProgress = 1 - Math.pow(1 - progress, 3);
-          setScale(0.5 + easeProgress * 0.5);
-          setOpacity(easeProgress);
+          const progress = (scrollStart - elementTop) / (scrollStart - scrollEnd);
+          const easeProgress = progress * progress;
+
+          setZoomScale(1 + easeProgress * 9);
+          setContentOpacity(Math.max(0, 1 - easeProgress * 2));
         }
       });
     };
@@ -55,5 +51,5 @@ export const useZoomScroll = (elementRef: React.RefObject<HTMLElement>) => {
     };
   }, [elementRef]);
 
-  return { scale, opacity };
+  return { zoomScale, contentOpacity };
 };
