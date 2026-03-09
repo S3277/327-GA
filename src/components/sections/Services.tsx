@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart3, Zap, TrendingUp } from 'lucide-react';
+import { ChartBar as BarChart3, Zap, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ServiceCardProps {
