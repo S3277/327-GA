@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Building2 } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { Button05 } from '../ui/arrow-dots-button';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -31,9 +32,7 @@ const Hero: React.FC = () => {
         </p>
         
         <div className='flex flex-col sm:flex-row items-center justify-center gap-6 animate-scale-in'>
-          <button className='btn-primary w-full sm:w-auto'>
-            {t.hero.primaryButton}
-          </button>
+          <Button05 text={t.hero.primaryButton} href="#contact" />
           <button className='btn-secondary w-full sm:w-auto'>
             {t.hero.secondaryButton}
           </button>
