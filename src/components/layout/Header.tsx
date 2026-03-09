@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { ThemeToggle } from '../ui/theme-toggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,32 +30,27 @@ const Header: React.FC = () => {
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#services'
             >
-              {t.nav.services}
+              Services
             </a>
             <a
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#framework'
             >
-              {t.nav.framework}
+              Framework
             </a>
             <a
               className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
               href='#about'
             >
-              {t.nav.about}
+              About
             </a>
             <div className='h-4 w-px bg-slate-700'></div>
-            <button 
-              onClick={toggleLanguage}
-              className='text-xs font-bold text-slate-400 hover:text-primary transition-colors'
-            >
-              {language === 'en' ? 'EN' : 'FR'} / {language === 'en' ? 'FR' : 'EN'}
-            </button>
+            <ThemeToggle />
           </nav>
 
           <div className='flex items-center gap-4'>
             <button className='bg-primary text-background-dark px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-all rounded'>
-              {t.nav.bookCall}
+              Book Strategy Call
             </button>
             <button
               className='md:hidden text-slate-100 hover:text-primary transition-colors'
@@ -77,28 +71,25 @@ const Header: React.FC = () => {
                 href='#services'
                 onClick={toggleMenu}
               >
-                {t.nav.services}
+                Services
               </a>
               <a
                 className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
                 href='#framework'
                 onClick={toggleMenu}
               >
-                {t.nav.framework}
+                Framework
               </a>
               <a
                 className='text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest'
                 href='#about'
                 onClick={toggleMenu}
               >
-                {t.nav.about}
+                About
               </a>
-              <button 
-                onClick={toggleLanguage}
-                className='text-xs font-bold text-slate-400 hover:text-primary transition-colors text-left'
-              >
-                {language === 'en' ? 'EN' : 'FR'} / {language === 'en' ? 'FR' : 'EN'}
-              </button>
+              <div className='flex justify-start py-2'>
+                <ThemeToggle />
+              </div>
             </div>
           </nav>
         )}
