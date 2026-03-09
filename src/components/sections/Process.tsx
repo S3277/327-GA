@@ -3,49 +3,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { BGPattern } from '../ui/bg-pattern';
 import { RoadmapCard } from '../ui/roadmap-card';
 
-interface ProcessStepProps {
-  number: string;
-  title: string;
-  description: string;
-}
-
-const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description }) => {
-  return (
-    <div className='flex gap-6'>
-      <span className='text-primary font-bold text-xl tabular-nums'>{number}</span>
-      <div>
-        <h5 className='text-xl font-bold text-slate-100 uppercase mb-2'>{title}</h5>
-        <p className='text-slate-400 font-light'>{description}</p>
-      </div>
-    </div>
-  );
-};
-
 const Process: React.FC = () => {
   const { t } = useLanguage();
-
-  const steps = [
-    {
-      number: '01',
-      title: t.process.step1.title,
-      description: t.process.step1.description,
-    },
-    {
-      number: '02',
-      title: t.process.step2.title,
-      description: t.process.step2.description,
-    },
-    {
-      number: '03',
-      title: t.process.step3.title,
-      description: t.process.step3.description,
-    },
-    {
-      number: '04',
-      title: t.process.step4.title,
-      description: t.process.step4.description,
-    },
-  ];
 
   const roadmapItems = [
     {
@@ -81,31 +40,18 @@ const Process: React.FC = () => {
       </div>
 
       <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex flex-col lg:flex-row gap-16 items-center'>
-          <div className='w-full lg:w-1/2 flex justify-center'>
+        <div className='flex flex-col items-center'>
+          <h2 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-16 text-center'>
+            {t.process.title} <br />
+            <span className='text-primary italic'>{t.process.subtitle}</span>
+          </h2>
+
+          <div className='w-full flex justify-center'>
             <RoadmapCard
               title={t.process.badge}
               description={`${t.process.title} ${t.process.subtitle}`}
               items={roadmapItems}
             />
-          </div>
-
-          <div className='w-full lg:w-1/2'>
-            <h2 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-12'>
-              {t.process.title} <br />
-              <span className='text-primary italic'>{t.process.subtitle}</span>
-            </h2>
-
-            <div className='space-y-12'>
-              {steps.map((step, index) => (
-                <ProcessStep
-                  key={index}
-                  number={step.number}
-                  title={step.title}
-                  description={step.description}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>
