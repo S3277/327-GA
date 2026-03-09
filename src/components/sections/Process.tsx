@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { BGPattern } from '../ui/bg-pattern';
+import { RoadmapCard } from '../ui/roadmap-card';
 
 interface ProcessStepProps {
   number: string;
@@ -46,6 +47,33 @@ const Process: React.FC = () => {
     },
   ];
 
+  const roadmapItems = [
+    {
+      quarter: t.process.step1.title,
+      title: '5-10k/mo',
+      description: t.process.step1.description,
+      status: 'done' as const,
+    },
+    {
+      quarter: t.process.step2.title,
+      title: '10-30k/mo',
+      description: t.process.step2.description,
+      status: 'in-progress' as const,
+    },
+    {
+      quarter: t.process.step3.title,
+      title: '30-70k/mo',
+      description: t.process.step3.description,
+      status: 'upcoming' as const,
+    },
+    {
+      quarter: t.process.step4.title,
+      title: '70k-100k+/mo',
+      description: t.process.step4.description,
+      status: 'upcoming' as const,
+    },
+  ];
+
   return (
     <section className='relative py-48 border-y border-primary/10' id='framework'>
       <div className='absolute inset-0 z-0 opacity-10 pointer-events-none'>
@@ -54,22 +82,12 @@ const Process: React.FC = () => {
 
       <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col lg:flex-row gap-16 items-center'>
-          <div className='w-full lg:w-1/2'>
-            <div className='relative aspect-square bg-slate-800 rounded-lg overflow-hidden border border-slate-700'>
-              <img
-                alt='Modern architectural workspace'
-                className='w-full h-full object-cover grayscale contrast-125 opacity-60'
-                src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&h=800'
-                loading='lazy'
-              />
-              <div className='absolute inset-0 bg-gradient-to-tr from-background-dark via-transparent to-transparent'></div>
-              <div className='absolute bottom-8 left-8 border-l-2 border-primary pl-4'>
-                <p className='text-primary text-4xl font-black italic'>01-04</p>
-                <p className='text-slate-400 uppercase text-xs tracking-widest font-bold'>
-                  {t.process.badge}
-                </p>
-              </div>
-            </div>
+          <div className='w-full lg:w-1/2 flex justify-center'>
+            <RoadmapCard
+              title={t.process.badge}
+              description={`${t.process.title} ${t.process.subtitle}`}
+              items={roadmapItems}
+            />
           </div>
 
           <div className='w-full lg:w-1/2'>

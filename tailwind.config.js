@@ -11,6 +11,19 @@ export default {
         "primary": "#ffffff",
         "background-light": "#f8f8f6",
         "background-dark": "#000000",
+        border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        "primary-foreground": "hsl(var(--primary-foreground))",
+        ring: "hsl(var(--ring))",
       },
       fontFamily: {
         "display": ["Inter", "sans-serif"]
