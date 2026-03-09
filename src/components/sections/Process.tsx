@@ -50,17 +50,35 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className='relative border-y border-primary/10' id='framework'>
-      <div className='relative py-48 overflow-hidden'>
-        <div className='absolute inset-0 z-0 opacity-10 pointer-events-none'>
-          <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.2)' />
+    <section ref={sectionRef} className='relative h-[300vh] border-y border-primary/10' id='framework'>
+      <div className='sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center'>
+        <div
+          className='fixed inset-0 pointer-events-none z-50'
+          style={{
+            opacity: zoomScale > 1 ? Math.min(1, (zoomScale - 1) / 2) : 0,
+            transition: 'opacity 0.2s ease-out',
+          }}
+        >
+          <div
+            className='absolute inset-0 flex items-center justify-center'
+            style={{
+              transform: `scale(${zoomScale})`,
+              transition: 'transform 0.1s ease-out',
+            }}
+          >
+            <div className='w-full h-full bg-slate-900/95 flex items-center justify-center'>
+              <div className='absolute inset-0 opacity-40'>
+                <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.4)' />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div
           className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'
           style={{
             opacity: contentOpacity,
-            transform: `scale(${1 / Math.max(1, zoomScale * 0.8)})`,
+            transform: `scale(${Math.max(0.5, 1 - (zoomScale - 1) * 0.15)})`,
             transition: 'opacity 0.2s ease-out, transform 0.2s ease-out',
           }}
         >
@@ -102,27 +120,15 @@ const Process: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className='fixed inset-0 pointer-events-none z-50'
-        style={{
-          opacity: zoomScale > 1 ? Math.min(1, (zoomScale - 1) / 4) : 0,
-          transition: 'opacity 0.2s ease-out',
-        }}
-      >
         <div
-          className='absolute inset-0 flex items-center justify-center'
+          className='absolute inset-0 z-0 pointer-events-none'
           style={{
-            transform: `scale(${zoomScale})`,
-            transition: 'transform 0.1s ease-out',
+            opacity: Math.max(0.1, 1 - (zoomScale - 1) * 0.3),
+            transition: 'opacity 0.3s ease-out',
           }}
         >
-          <div className='w-full h-full bg-slate-900/95 flex items-center justify-center'>
-            <div className='absolute inset-0 opacity-30'>
-              <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.3)' />
-            </div>
-          </div>
+          <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.2)' />
         </div>
       </div>
     </section>
