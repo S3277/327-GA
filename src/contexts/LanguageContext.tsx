@@ -87,8 +87,8 @@ const translations: { en: Translations; fr: Translations } = {
     },
     hero: {
       badge: 'Systems That Convert Audience Into Cash Flow',
-      title: 'I Turn Your Audience',
-      subtitle: 'Into High-Ticket Cash Flow',
+      title: 'Build Your',
+      subtitle: 'Coaching Empire',
       description: 'Stop being the bottleneck in your own business. I install the infrastructure, the automation, and the talent so you can scale to $50k/mo+ without touching your DMs.',
       primaryButton: 'Apply for a Growth Audit',
       secondaryButton: 'View Framework',
