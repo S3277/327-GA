@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useParallax } from '../../hooks/useParallax';
 
 interface FormData {
   fullName: string;
@@ -10,6 +11,7 @@ interface FormData {
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+  const parallaxOffset = useParallax(0.1);
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -36,7 +38,12 @@ const Contact: React.FC = () => {
   return (
     <section className='py-24 bg-background-dark' id='contact'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-4xl mx-auto bg-slate-900/50 border border-slate-800 p-8 md:p-16 rounded-xl'>
+        <div
+          className='max-w-4xl mx-auto bg-slate-900/50 border border-slate-800 p-8 md:p-16 rounded-xl'
+          style={{
+            transform: `translateY(${parallaxOffset}px)`
+          }}
+        >
           <div className='text-center mb-12'>
             <h2 className='section-title'>{t.contact.badge}</h2>
             <h3 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-4'>

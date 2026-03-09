@@ -1,21 +1,32 @@
 import React from 'react';
 import { ChartBar as BarChart3, Zap, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useParallax } from '../../hooks/useParallax';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  index: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className='bg-background-dark p-12 group hover:bg-primary/[0.02] transition-colors'>
-    <div className='text-primary text-4xl mb-8'>{icon}</div>
-    <h4 className='text-2xl font-bold text-slate-100 mb-4 uppercase'>{title}</h4>
-    <p className='text-slate-400 font-light leading-relaxed mb-8'>{description}</p>
-    <div className='h-1 w-0 bg-primary group-hover:w-full transition-all duration-500'></div>
-  </div>
-);
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, index }) => {
+  const parallaxOffset = useParallax(0.15 + index * 0.05);
+
+  return (
+    <div
+      className='bg-background-dark p-12 group hover:bg-primary/[0.02] transition-colors'
+      style={{
+        transform: `translateY(${parallaxOffset}px)`
+      }}
+    >
+      <div className='text-primary text-4xl mb-8'>{icon}</div>
+      <h4 className='text-2xl font-bold text-slate-100 mb-4 uppercase'>{title}</h4>
+      <p className='text-slate-400 font-light leading-relaxed mb-8'>{description}</p>
+      <div className='h-1 w-0 bg-primary group-hover:w-full transition-all duration-500'></div>
+    </div>
+  );
+};
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -53,6 +64,7 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <ServiceCard
               key={index}
+              index={index}
               icon={service.icon}
               title={service.title}
               description={service.description}
