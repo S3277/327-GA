@@ -24,7 +24,7 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
 
   useEffect(() => {
     if (isInView) {
-      const duration = 2000;
+      const duration = 2500;
       const startTime = Date.now();
 
       const animate = () => {
@@ -32,10 +32,12 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
         const progress = Math.min(elapsed / duration, 1);
         setLineProgress(progress * 100);
 
-        const stepIndex = Math.floor(progress * items.length);
-        if (stepIndex < items.length && !visibleSteps.includes(stepIndex)) {
-          setVisibleSteps((prev) => [...prev, stepIndex]);
-        }
+        items.forEach((_, index) => {
+          const stepThreshold = ((index + 1) / items.length) * 100;
+          if (lineProgress >= stepThreshold && !visibleSteps.includes(index)) {
+            setVisibleSteps((prev) => [...prev, index]);
+          }
+        });
 
         if (progress < 1) {
           requestAnimationFrame(animate);
@@ -44,7 +46,7 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
 
       animate();
     }
-  }, [isInView, items.length, visibleSteps]);
+  }, [isInView, items.length, visibleSteps, lineProgress]);
 
   return (
     <Card className='w-full max-w-5xl bg-transparent border-none shadow-none'>
@@ -62,6 +64,8 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
             {items.map((item, index) => {
               const isCompleted = item.status === 'done' || item.status === 'in-progress';
               const shouldShow = visibleSteps.includes(index);
+              const stepPosition = ((index + 0.5) / items.length) * 100;
+              const hasLinePassed = lineProgress >= stepPosition;
 
               return (
                 <motion.div
@@ -72,27 +76,26 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
                   transition={{ duration: 0.5 }}
                 >
                   <motion.div
-                    className={`absolute left-1/2 top-6 -translate-x-1/2 h-6 w-6 rounded-full border-4 ${
-                      isCompleted
+                    className={`absolute left-1/2 top-6 -translate-x-1/2 h-6 w-6 rounded-full border-4 transition-all duration-500 ${
+                      hasLinePassed && isCompleted
                         ? 'bg-white border-white shadow-lg shadow-white/50'
                         : 'bg-background-dark border-slate-600'
                     }`}
                     initial={{ scale: 0 }}
-                    animate={{ scale: shouldShow ? 1 : 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
+                    animate={{ scale: hasLinePassed ? 1 : 0 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    {isCompleted && (
+                    {hasLinePassed && isCompleted && (
                       <motion.div
                         className='absolute inset-0 rounded-full bg-white'
-                        initial={{ scale: 1 }}
+                        initial={{ scale: 1, opacity: 1 }}
                         animate={{
-                          scale: [1, 1.5, 1],
+                          scale: [1, 1.8, 1],
                           opacity: [1, 0, 0],
                         }}
                         transition={{
-                          duration: 1,
-                          repeat: shouldShow ? 1 : 0,
-                          repeatDelay: 0.5,
+                          duration: 0.8,
+                          times: [0, 0.6, 1],
                         }}
                       />
                     )}
@@ -100,8 +103,8 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
 
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: shouldShow ? 1 : 0, y: shouldShow ? 0 : 10 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    animate={{ opacity: hasLinePassed ? 1 : 0, y: hasLinePassed ? 0 : 10 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <Badge
                       variant={isCompleted ? 'default' : 'outline'}
