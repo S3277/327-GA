@@ -12,28 +12,27 @@ export function Onboarding({ onComplete }: OnboardingProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className='fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black'
     >
-      <div className='relative flex size-full max-w-4xl flex-col items-center justify-center px-8'>
+      <div className='relative flex size-full max-w-6xl flex-col items-center justify-center px-8'>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className='relative flex size-full max-w-3xl items-center justify-center'
+          className='relative flex size-full items-center justify-center'
         >
           <div className='relative w-full h-[700px] flex items-center justify-center overflow-hidden'>
             <motion.span
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className='pointer-events-none absolute whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-6xl md:text-8xl font-black leading-none text-transparent z-20'
+              className='pointer-events-none absolute whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-6xl md:text-8xl font-black leading-none text-transparent z-20 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]'
             >
               Global Growth
             </motion.span>
-            <div className='relative w-full h-full flex items-center justify-center'>
-              <Globe className='top-0' />
+            <div className='absolute inset-0 flex items-center justify-center scale-150'>
+              <Globe />
             </div>
-            <div className='pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.5)_100%)]' />
           </div>
         </motion.div>
 
@@ -43,7 +42,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 1, duration: 0.8 }}
           className='text-center mb-12 z-10'
         >
-          <p className='text-slate-400 text-lg mb-8 max-w-2xl mx-auto'>
+          <p className='text-slate-300 text-lg mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]'>
             Transform your business with strategic growth solutions that reach across the globe
           </p>
           <motion.button
