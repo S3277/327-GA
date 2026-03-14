@@ -21,17 +21,19 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.3, duration: 0.8 }}
           className='relative flex size-full max-w-3xl items-center justify-center'
         >
-          <div className='relative w-full h-[600px] flex items-center justify-center'>
+          <div className='relative w-full h-[700px] flex items-center justify-center overflow-hidden'>
             <motion.span
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className='pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-7xl md:text-8xl font-black leading-none text-transparent z-10'
+              className='pointer-events-none absolute whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-6xl md:text-8xl font-black leading-none text-transparent z-20'
             >
               Global Growth
             </motion.span>
-            <Globe className='top-28' />
-            <div className='pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.4),rgba(255,255,255,0))]' />
+            <div className='relative w-full h-full flex items-center justify-center'>
+              <Globe className='top-0' />
+            </div>
+            <div className='pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.5)_100%)]' />
           </div>
         </motion.div>
 
