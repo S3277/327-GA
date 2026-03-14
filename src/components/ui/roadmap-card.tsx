@@ -30,12 +30,18 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
       const animate = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        setLineProgress(progress * 100);
+        const currentProgress = progress * 100;
+        setLineProgress(currentProgress);
 
         items.forEach((_, index) => {
-          const stepThreshold = ((index + 1) / items.length) * 100;
-          if (lineProgress >= stepThreshold && !visibleSteps.includes(index)) {
-            setVisibleSteps((prev) => [...prev, index]);
+          const stepThreshold = ((index + 0.5) / items.length) * 100;
+          if (currentProgress >= stepThreshold) {
+            setVisibleSteps((prev) => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
           }
         });
 
@@ -46,7 +52,7 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
 
       animate();
     }
-  }, [isInView, items.length, visibleSteps, lineProgress]);
+  }, [isInView, items.length]);
 
   return (
     <Card className='w-full max-w-5xl bg-transparent border-none shadow-none'>
