@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { FadeInSection } from '../ui/fade-in-section';
 
 interface FormData {
   fullName: string;
@@ -26,26 +27,25 @@ const Contact: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
   return (
-    <section className='py-24 bg-background-dark' id='contact'>
+    <section className='py-32 bg-background-dark' id='contact'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-4xl mx-auto bg-slate-900/50 border border-slate-800 p-8 md:p-16 rounded-xl'>
-          <div className='text-center mb-12'>
-            <h2 className='section-title'>{t.contact.badge}</h2>
-            <h3 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-4'>
-              {t.contact.title}{' '}
-              <span className='text-primary italic'>{t.contact.subtitle}</span>
-            </h3>
-            <p className='text-slate-400 font-light'>
-              {t.contact.description}
-            </p>
-          </div>
+        <FadeInSection>
+          <div className='max-w-4xl mx-auto bg-slate-900/50 border border-slate-800 p-8 md:p-16 rounded-xl'>
+            <div className='text-center mb-12'>
+              <h2 className='section-title'>{t.contact.badge}</h2>
+              <h3 className='text-4xl md:text-6xl font-black text-slate-100 uppercase tracking-tighter mb-6'>
+                {t.contact.title}{' '}
+                <span className='text-gradient italic font-light'>{t.contact.subtitle}</span>
+              </h3>
+              <p className='text-slate-400 font-light text-lg'>{t.contact.description}</p>
+            </div>
           
           <form className='space-y-6' onSubmit={handleSubmit}>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -118,7 +118,8 @@ const Contact: React.FC = () => {
               {t.contact.button}
             </button>
           </form>
-        </div>
+          </div>
+        </FadeInSection>
       </div>
     </section>
   );

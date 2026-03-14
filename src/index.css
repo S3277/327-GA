@@ -18,10 +18,15 @@
 
   html {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply antialiased overflow-x-hidden;
+  }
+
+  section {
+    scroll-margin-top: 80px;
   }
 }
 

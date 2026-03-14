@@ -107,23 +107,23 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: 'Lose Money',
       funnel: {
         title: 'VSL That Converts',
-        description: 'Your video sales letter should close for you. I write, script, and optimize VSLs that turn cold traffic into booked calls at scale.',
+        description: 'Your VSL is the first thing a prospect sees. If it doesn\'t hook them in 8 seconds, they\'re gone. I script, structure, and optimize VSLs that turn cold traffic into booked calls — on autopilot.',
       },
       automation: {
         title: 'AI Qualification System',
-        description: 'Stop wasting time on unqualified leads. I build automated qualification forms that filter, score, and route only serious buyers to your calendar.',
+        description: 'You\'re losing hours every week on leads who were never going to buy. I build AI-powered forms that filter, score, and route only serious buyers to your calendar. No more wasted calls.',
       },
       analytics: {
         title: 'Copy That Sells',
-        description: 'Bad copy kills conversions. I rewrite your landing pages, emails, and sales assets with direct-response frameworks that convert skeptics into buyers.',
+        description: 'Weak copy is silently killing your conversions every single day. I rewrite your landing pages, emails, and sales assets using direct-response frameworks that turn skeptics into buyers.',
       },
       community: {
         title: 'Discord Community',
-        description: 'Retention is revenue. I build engaged Discord communities that keep your clients active, reduce refunds, and create upsell opportunities.',
+        description: 'A dead community kills retention and kills upsells. I build and structure Discord communities that keep your clients engaged, reduce refunds, and create new revenue opportunities.',
       },
       bottleneck: {
         title: 'Bottleneck Identification',
-        description: 'Most coaches don\'t know where they\'re bleeding money. I analyze your entire funnel and pinpoint exactly what\'s killing your conversion rates.',
+        description: 'Most coaches have no idea where their funnel is bleeding. I do a full audit of your entire system and pinpoint the exact leaks costing you money — before we fix anything.',
       },
     },
     process: {
@@ -132,19 +132,19 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: 'Your Coaching Program',
       step1: {
         title: 'Funnel Audit',
-        description: 'We identify exactly where you\'re losing money in your current funnel.',
+        description: 'We tear apart your current funnel and find exactly where you\'re losing money. No guessing.',
       },
       step2: {
         title: 'System Build',
-        description: 'VSL, AI qualification form, and optimized copy deployed.',
+        description: 'We deploy your new VSL, AI qualification form, and rewritten copy. Your funnel is now a machine.',
       },
       step3: {
         title: 'Community Setup',
-        description: 'Discord or Skool community built and integrated with your program.',
+        description: 'We build and launch your Discord or Skool community, fully integrated into your program.',
       },
       step4: {
         title: 'Scale',
-        description: 'Consistent content strategy and ongoing funnel optimization.',
+        description: 'With everything running, we optimize continuously — lower acquisition cost, higher LTV, more revenue.',
       },
     },
     about: {
@@ -191,23 +191,23 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: 'Perdent De L\'Argent',
       funnel: {
         title: 'VSL Qui Convertit',
-        description: 'Ta lettre de vente vidéo devrait closer pour toi. J\'écris, scripte et optimise des VSL qui transforment le trafic froid en appels réservés à grande échelle.',
+        description: 'Ton VSL c\'est la première chose qu\'un prospect voit. S\'il accroche pas en 8 secondes, c\'est mort. Je scripte, structure et optimise des VSL qui transforment le trafic froid en appels réservés — en automatique.',
       },
       automation: {
         title: 'Système De Qualification IA',
-        description: 'Arrête de perdre ton temps avec des leads non qualifiés. Je construis des formulaires de qualification automatisés qui filtrent, scorent et routent uniquement les acheteurs sérieux vers ton calendrier.',
+        description: 'Tu perds des heures chaque semaine sur des leads qui n\'achèteront jamais. Je construis des formulaires IA qui filtrent, scorent et envoient uniquement les acheteurs sérieux vers ton calendrier. Fini les appels perdus.',
       },
       analytics: {
         title: 'Copy Qui Vend',
-        description: 'Le mauvais copy tue les conversions. Je réécris tes pages de vente, emails et assets avec des frameworks de réponse directe qui convertissent les sceptiques en acheteurs.',
+        description: 'Le mauvais copy tue tes conversions en silence chaque jour. Je réécris tes landing pages, emails et assets avec des frameworks de réponse directe qui transforment les sceptiques en acheteurs.',
       },
       community: {
         title: 'Communauté Discord',
-        description: 'La rétention, c\'est le revenu. Je construis des communautés Discord engagées qui gardent tes clients actifs, réduisent les remboursements et créent des opportunités d\'upsell.',
+        description: 'Une communauté morte tue la rétention et les upsells. Je construis et structure des communautés Discord qui gardent tes clients engagés, réduisent les remboursements et créent de nouvelles opportunités de revenus.',
       },
       bottleneck: {
         title: 'Identification Des Blocages',
-        description: 'La plupart des coachs ne savent pas où ils perdent de l\'argent. J\'analyse ton funnel entier et j\'identifie exactement ce qui tue tes taux de conversion.',
+        description: 'La plupart des coachs n\'ont aucune idée d\'où leur funnel saigne. Je fais un audit complet de ton système et j\'identifie les fuites exactes qui te coûtent de l\'argent — avant de tout réparer.',
       },
     },
     process: {
@@ -216,19 +216,19 @@ const translations: { en: Translations; fr: Translations } = {
       subtitle: 'Ton Programme De Coaching',
       step1: {
         title: 'Audit Du Funnel',
-        description: 'On identifie exactement où tu perds de l\'argent dans ton funnel actuel.',
+        description: 'On déchire ton funnel actuel et on trouve exactement où tu perds de l\'argent. Pas de devinette.',
       },
       step2: {
         title: 'Construction Du Système',
-        description: 'VSL, formulaire de qualification IA et copy optimisé déployés.',
+        description: 'On déploie ton nouveau VSL, formulaire de qualification IA et copy réécrit. Ton funnel est maintenant une machine.',
       },
       step3: {
         title: 'Setup De La Communauté',
-        description: 'Communauté Discord ou Skool construite et intégrée à ton programme.',
+        description: 'On construit et lance ta communauté Discord ou Skool, totalement intégrée à ton programme.',
       },
       step4: {
         title: 'Scale',
-        description: 'Stratégie de contenu cohérente et optimisation continue du funnel.',
+        description: 'Avec tout en place, on optimise en continu — coût d\'acquisition plus bas, LTV plus haute, plus de revenu.',
       },
     },
     about: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Building2 } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Button05 } from '../ui/arrow-dots-button';
@@ -6,6 +6,25 @@ import { BGPattern } from '../ui/bg-pattern';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const parallaxOffset = scrollY * 0.5;
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className='relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-primary/5'>
@@ -16,7 +35,10 @@ const Hero: React.FC = () => {
         <BGPattern variant='dots' mask='fade-edges' size={32} fill='rgba(255,255,255,0.3)' />
       </div>
 
-      <div className='relative z-10 mx-auto max-w-5xl px-4 text-center'>
+      <div
+        className='relative z-10 mx-auto max-w-5xl px-4 text-center'
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
+      >
         <div className='inline-flex items-center gap-2 mb-6 px-3 py-1 border border-primary/30 rounded-full bg-primary/5 animate-fade-in'>
           <Building2 className='text-primary' size={16} />
           <span className='text-[10px] uppercase font-bold tracking-[0.2em] text-primary'>
@@ -27,7 +49,7 @@ const Hero: React.FC = () => {
         <h1 className='heading-hero mb-8 animate-slide-up'>
           {t.hero.title}{' '}
           <br />
-          <span className='text-gradient italic'>{t.hero.subtitle}</span>
+          <span className='text-gradient italic font-light'>{t.hero.subtitle}</span>
         </h1>
 
         <p className='max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-light mb-12 leading-relaxed animate-slide-up'>
@@ -35,14 +57,16 @@ const Hero: React.FC = () => {
         </p>
 
         <div className='flex flex-col sm:flex-row items-center justify-center gap-6 animate-scale-in'>
-          <Button05 text={t.hero.primaryButton} href="#contact" />
-          <button className='btn-secondary w-full sm:w-auto'>
+          <Button05 text={t.hero.primaryButton} href='#contact' />
+          <button
+            onClick={() => scrollToSection('framework')}
+            className='btn-secondary w-full sm:w-auto'
+          >
             {t.hero.secondaryButton}
           </button>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className='absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce'>
         <ChevronDown className='text-primary' size={24} />
       </div>

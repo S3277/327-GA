@@ -34,24 +34,21 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section className='relative py-24 border-y border-primary/10' id='framework'>
+    <section className='relative py-32 border-y border-primary/10' id='framework'>
       <div className='absolute inset-0 z-0 opacity-10 pointer-events-none'>
         <BGPattern variant='grid' mask='fade-edges' size={40} fill='rgba(255,255,255,0.2)' />
       </div>
 
       <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col items-center'>
-          <h2 className='text-4xl md:text-5xl font-black text-slate-100 uppercase tracking-tighter mb-12 text-center'>
+          <h2 className='section-title mb-6'>{t.process.badge}</h2>
+          <h3 className='text-4xl md:text-6xl font-black text-slate-100 uppercase tracking-tighter mb-20 text-center'>
             {t.process.title} <br />
-            <span className='text-primary italic'>{t.process.subtitle}</span>
-          </h2>
+            <span className='text-gradient italic font-light'>{t.process.subtitle}</span>
+          </h3>
 
           <div className='w-full flex justify-center'>
-            <RoadmapCard
-              title={t.process.badge}
-              description={`${t.process.title} ${t.process.subtitle}`}
-              items={roadmapItems}
-            />
+            <RoadmapCard items={roadmapItems} />
           </div>
         </div>
       </div>
