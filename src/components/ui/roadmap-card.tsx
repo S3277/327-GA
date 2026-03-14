@@ -52,9 +52,9 @@ export function RoadmapCard({ items }: RoadmapCardProps) {
     <Card className='w-full max-w-5xl bg-transparent border-none shadow-none'>
       <CardContent className='pt-6'>
         <div className='relative' ref={containerRef}>
-          <div className='absolute left-[5%] right-[5%] top-8 h-0.5 bg-slate-800'>
+          <div className='absolute left-[5%] right-[5%] top-8 h-1 bg-slate-800 rounded-full'>
             <motion.div
-              className='h-full bg-white'
+              className='h-full bg-gradient-to-r from-white to-slate-400 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]'
               style={{ width: `${lineProgress}%` }}
               transition={{ duration: 0.1, ease: 'linear' }}
             />
