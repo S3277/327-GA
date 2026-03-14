@@ -21,16 +21,16 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.3, duration: 0.8 }}
           className='relative flex size-full items-center justify-center'
         >
-          <div className='relative w-full h-[700px] flex items-center justify-center overflow-hidden'>
+          <div className='relative w-full h-[700px] flex items-start justify-center overflow-hidden pt-32'>
             <motion.span
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className='pointer-events-none absolute whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-6xl md:text-8xl font-black leading-none text-transparent z-20 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]'
+              className='pointer-events-none absolute top-16 whitespace-pre-wrap bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-center text-6xl md:text-8xl font-black leading-none text-transparent z-20 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]'
             >
               Global Growth
             </motion.span>
-            <div className='absolute inset-0 flex items-center justify-center scale-150'>
+            <div className='absolute top-[40%] left-1/2 -translate-x-1/2 w-full h-full scale-[2.5]'>
               <Globe />
             </div>
           </div>
