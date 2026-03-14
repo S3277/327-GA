@@ -124,7 +124,7 @@ const translations: { en: Translations; fr: Translations } = {
       },
       step3: {
         title: 'The Talent Deployment',
-        description: 'I place and manage high-level setters or sales reps directly into your system.',
+        description: 'I place and manage high-level sales reps directly into your system.',
       },
       step4: {
         title: 'The Scale Phase',
@@ -200,7 +200,7 @@ const translations: { en: Translations; fr: Translations } = {
       },
       step3: {
         title: 'Le Déploiement des Talents',
-        description: 'Je place et gère des closers ou représentants commerciaux de haut niveau directement dans votre système.',
+        description: 'Je place et gère des représentants commerciaux de haut niveau directement dans votre système.',
       },
       step4: {
         title: 'La Phase d\'Expansion',
