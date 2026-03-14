@@ -29,9 +29,14 @@ const Header: React.FC = () => {
               alt='327 Logo'
               className='h-14 w-14 rounded object-cover'
             />
-            <span className='text-2xl font-black tracking-tighter uppercase text-white'>
-              327
-            </span>
+            <div className='flex flex-col -space-y-1'>
+              <span className='text-2xl font-black tracking-tighter uppercase text-white'>
+                327
+              </span>
+              <span className='text-[10px] font-bold tracking-wider uppercase text-slate-400'>
+                Growth Architect
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
