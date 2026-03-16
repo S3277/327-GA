@@ -45,7 +45,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
+      className="fixed inset-0 z-50 flex items-start justify-center bg-black overflow-hidden pt-16 md:pt-24"
     >
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center max-w-4xl">
@@ -54,7 +54,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-2 uppercase tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-2 uppercase tracking-tight">
             YOUR FUNNEL IS LEAKING MONEY
           </h1>
           <p className="text-3xl md:text-4xl text-white mb-8 italic">
@@ -90,14 +90,14 @@ export function Onboarding({ onComplete }: OnboardingProps) {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="relative w-full h-full flex items-end justify-center"
+          className="relative w-full h-full flex items-center justify-center"
         >
-          <div className="relative w-full max-w-[1200px] h-[1200px] translate-y-[50%]">
+          <div className="relative w-full max-w-[900px] h-[900px]">
             <Globe config={GLOBE_CONFIG} className="!max-w-none !w-full" />
           </div>
         </motion.div>
