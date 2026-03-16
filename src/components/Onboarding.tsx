@@ -54,7 +54,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-2 uppercase tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-2 uppercase tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
             YOUR FUNNEL IS LEAKING MONEY
           </h1>
           <p className="text-3xl md:text-4xl text-white mb-8 italic">
