@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Building2 } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { Button05 } from '../ui/arrow-dots-button';
 import { BGPattern } from '../ui/bg-pattern';
 
 const Hero: React.FC = () => {
@@ -46,18 +45,25 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        <h1 className='heading-hero mb-8 animate-slide-up'>
-          {t.hero.title}{' '}
-          <br />
-          <span className='text-gradient italic font-light'>{t.hero.subtitle}</span>
+        <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 animate-slide-up uppercase tracking-tight leading-tight text-white'>
+          {t.hero.title}
         </h1>
 
-        <p className='max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-light mb-12 leading-relaxed animate-slide-up'>
+        <p className='text-xl sm:text-2xl md:text-3xl text-slate-400 mb-6 italic animate-slide-up'>
+          {t.hero.subtitle}
+        </p>
+
+        <p className='max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-light mb-12 leading-relaxed animate-slide-up'>
           {t.hero.description}
         </p>
 
         <div className='flex flex-col sm:flex-row items-center justify-center gap-6 animate-scale-in'>
-          <Button05 text={t.hero.primaryButton} href='#contact' />
+          <button
+            onClick={() => scrollToSection('contact')}
+            className='group px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-white text-black font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-300'
+          >
+            {t.hero.primaryButton}
+          </button>
           <button
             onClick={() => scrollToSection('framework')}
             className='btn-secondary w-full sm:w-auto'

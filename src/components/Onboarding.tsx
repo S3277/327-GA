@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Globe } from './ui/globe';
 import { COBEOptions } from 'cobe';
-import { Button05 } from './ui/arrow-dots-button';
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -49,7 +48,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
     >
 
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 text-center max-w-4xl w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 text-center max-w-5xl w-full">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -57,10 +56,13 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           className="mb-8 sm:mb-10 md:mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-2 sm:mb-3 md:mb-4 uppercase tracking-tight leading-tight px-2">
-            YOUR FUNNEL IS <span className="italic">LEAKING</span> MONEY
+            YOUR FUNNEL IS <span className="italic">BLEEDING</span> MONEY
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white italic px-2">
-            Let's fix that.
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-4 sm:mb-5 md:mb-6 italic px-2">
+            And you didn't even notice.
+          </p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 font-light leading-relaxed max-w-3xl mx-auto px-2">
+            Most info coaches are sitting on a goldmine and converting like amateurs. I come in, tear apart your funnel, and rebuild it into something that actually closes — VSL, copy, automation, community. All of it.
           </p>
         </motion.div>
 
@@ -71,7 +73,12 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           onClick={onComplete}
           className="mb-16 sm:mb-20 md:mb-0"
         >
-          <Button05 text="SEE HOW 327 DOES IT" href="#" />
+          <button className="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-white text-black font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-300 overflow-hidden">
+            <span className="relative z-10 flex items-center gap-2">
+              SEE HOW 327 DOES IT
+              <span className="text-lg sm:text-xl">→</span>
+            </span>
+          </button>
         </motion.div>
       </div>
 

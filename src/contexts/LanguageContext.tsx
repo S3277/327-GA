@@ -95,10 +95,10 @@ const translations: { en: Translations; fr: Translations } = {
     },
     hero: {
       badge: 'Built for Info Coaches Who Want More',
-      title: 'Your Funnel Is Leaking Money',
-      subtitle: 'Let\'s Fix That.',
-      description: 'I audit, rebuild, and optimize your entire sales funnel — from VSL to community — so your coaching program converts while you focus on coaching.',
-      primaryButton: 'Apply Now',
+      title: 'YOUR FUNNEL IS BLEEDING MONEY',
+      subtitle: 'And you didn\'t even notice.',
+      description: 'Most info coaches are sitting on a goldmine and converting like amateurs. I come in, tear apart your funnel, and rebuild it into something that actually closes — VSL, copy, automation, community. All of it.',
+      primaryButton: 'SEE HOW 327 DOES IT →',
       secondaryButton: 'See How It Works',
     },
     services: {
@@ -179,10 +179,10 @@ const translations: { en: Translations; fr: Translations } = {
     },
     hero: {
       badge: 'Conçu Pour Les Coachs Qui Veulent Plus',
-      title: 'Ton Funnel Perd De L\'Argent',
-      subtitle: 'On Va Régler Ça.',
-      description: 'J\'audite, reconstruis et optimise ton funnel de vente — du VSL à la communauté — pour que ton programme se vende pendant que toi, tu coaches.',
-      primaryButton: 'Postuler',
+      title: 'TON FUNNEL SAIGNE DE L\'ARGENT',
+      subtitle: 'Et tu ne t\'en étais même pas rendu compte.',
+      description: 'La plupart des coachs ont un vrai potentiel — et convertissent comme des débutants. J\'entre, je démonte ton funnel, et je le reconstruit pour qu\'il close vraiment — VSL, copy, automatisation, communauté. Tout.',
+      primaryButton: 'SEE HOW 327 DOES IT →',
       secondaryButton: 'Voir Le Processus',
     },
     services: {

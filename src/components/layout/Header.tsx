@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   return (
     <header className='sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex h-20 items-center justify-between'>
+        <div className='flex h-24 items-center justify-between'>
           <button
             onClick={() => {
               localStorage.removeItem('onboardingCompleted');
