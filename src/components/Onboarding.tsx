@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Globe } from './ui/globe';
-import { ArrowRight } from 'lucide-react';
 import { COBEOptions } from 'cobe';
 
 const GLOBE_CONFIG: COBEOptions = {
@@ -55,26 +54,40 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent">
-            Welcome to Growth Architect
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-2 uppercase tracking-tight">
+            YOUR FUNNEL IS LEAKING MONEY
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl">
-            Building digital experiences that scale globally. Let's transform your vision into reality.
+          <p className="text-3xl md:text-4xl text-white mb-8 italic">
+            Let's fix that.
+          </p>
+          <p className="text-lg md:text-xl text-white mb-12 max-w-2xl font-medium">
+            I audit, rebuild, and optimize your entire sales funnel so your coaching program converts while you focus on coaching.
           </p>
         </motion.div>
 
-        <motion.button
-          onClick={onComplete}
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold text-lg flex items-center gap-3 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+          className="flex flex-col sm:flex-row gap-4"
         >
-          Enter
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
+          <motion.button
+            onClick={onComplete}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 bg-white text-black font-bold text-lg uppercase tracking-wide rounded-md transition-all duration-300"
+          >
+            APPLY NOW
+          </motion.button>
+          <motion.button
+            onClick={onComplete}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg uppercase tracking-wide rounded-md transition-all duration-300"
+          >
+            SEE HOW IT WORKS
+          </motion.button>
+        </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-[60%] overflow-hidden">
