@@ -58,11 +58,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           <h1 className="text-6xl md:text-8xl font-black text-white mb-2 uppercase tracking-tight">
             YOUR FUNNEL IS <span className="italic">LEAKING</span> MONEY
           </h1>
-          <p className="text-3xl md:text-4xl text-white mb-8 italic">
+          <p className="text-3xl md:text-4xl text-white mb-12 italic">
             Let's fix that.
-          </p>
-          <p className="text-lg md:text-xl text-white mb-12 max-w-2xl font-medium">
-            I audit, rebuild, and optimize your entire sales funnel so your coaching program converts while you focus on coaching.
           </p>
         </motion.div>
 
@@ -72,7 +69,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.6, duration: 0.8 }}
           onClick={onComplete}
         >
-          <Button05 text="APPLY NOW" href="#" />
+          <Button05 text="SEE HOW WE DO IT" href="#" />
         </motion.div>
       </div>
 
