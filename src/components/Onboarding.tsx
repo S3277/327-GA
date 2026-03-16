@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Globe } from './ui/globe';
 import { COBEOptions } from 'cobe';
+import { Button05 } from './ui/arrow-dots-button';
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -55,7 +56,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <h1 className="text-6xl md:text-8xl font-black text-white mb-2 uppercase tracking-tight">
-            YOUR FUNNEL IS LEAKING MONEY
+            YOUR FUNNEL IS <span className="italic">LEAKING</span> MONEY
           </h1>
           <p className="text-3xl md:text-4xl text-white mb-8 italic">
             Let's fix that.
@@ -69,24 +70,9 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4"
+          onClick={onComplete}
         >
-          <motion.button
-            onClick={onComplete}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 bg-white text-black font-bold text-lg uppercase tracking-wide rounded-md transition-all duration-300"
-          >
-            APPLY NOW
-          </motion.button>
-          <motion.button
-            onClick={onComplete}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg uppercase tracking-wide rounded-md transition-all duration-300"
-          >
-            SEE HOW IT WORKS
-          </motion.button>
+          <Button05 text="APPLY NOW" href="#" />
         </motion.div>
       </div>
 
