@@ -97,7 +97,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.5, duration: 1 }}
           className="relative w-full h-full flex items-end justify-center"
         >
-          <div className="relative w-full max-w-[900px] h-[900px] translate-y-[30%]">
+          <div className="relative w-full max-w-[1200px] h-[1200px] translate-y-[45%]">
             <Globe config={GLOBE_CONFIG} className="!max-w-none !w-full" />
           </div>
         </motion.div>
