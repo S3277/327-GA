@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className='relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-primary/5'>
+    <section className='relative min-h-[90vh] flex items-start justify-center overflow-hidden border-b border-primary/5 pt-24'>
       <div
         className='absolute inset-0 z-0 opacity-20 pointer-events-none'
         aria-hidden='true'
@@ -45,13 +45,9 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 animate-slide-up uppercase tracking-tight leading-tight text-white'>
+        <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 animate-slide-up uppercase tracking-tight leading-tight text-white'>
           {t.hero.title}
         </h1>
-
-        <p className='text-xl sm:text-2xl md:text-3xl text-slate-400 mb-6 italic animate-slide-up'>
-          {t.hero.subtitle}
-        </p>
 
         <p className='max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-light mb-12 leading-relaxed animate-slide-up'>
           {t.hero.description}
