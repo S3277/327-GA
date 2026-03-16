@@ -69,7 +69,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.6, duration: 0.8 }}
           onClick={onComplete}
         >
-          <Button05 text="SEE HOW WE DO IT" href="#" />
+          <Button05 text="SEE HOW 327 DOES IT" href="#" />
         </motion.div>
       </div>
 
@@ -80,7 +80,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.5, duration: 1 }}
           className="relative w-full h-full flex items-end justify-center"
         >
-          <div className="relative w-full max-w-[1200px] h-[1200px] translate-y-[45%]">
+          <div className="relative w-full max-w-[1200px] h-[1200px] translate-y-[55%]">
             <Globe config={GLOBE_CONFIG} className="!max-w-none !w-full" />
           </div>
         </motion.div>
