@@ -21,7 +21,22 @@ const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      document.body.style.overflow = 'hidden';
+      const heroSection = document.querySelector('section');
+
+      if (heroSection) {
+        heroSection.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        heroSection.style.transform = 'scale(1.5)';
+
+        setTimeout(() => {
+          document.body.style.overflow = '';
+          if (heroSection) {
+            heroSection.style.transition = '';
+            heroSection.style.transform = '';
+          }
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 800);
+      }
     }
   };
 
