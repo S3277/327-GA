@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Globe } from './ui/globe';
+import { Button05 } from './ui/arrow-dots-button';
 import { COBEOptions } from 'cobe';
 
 const GLOBE_CONFIG: COBEOptions = {
@@ -67,15 +68,12 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          onClick={onComplete}
           className="mb-16 sm:mb-20 md:mb-0"
         >
-          <button className="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-white text-black font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-black hover:text-white transition-all duration-300 overflow-hidden">
-            <span className="relative z-10 flex items-center gap-2">
-              SEE HOW 327 DOES IT
-              <span className="text-lg sm:text-xl">→</span>
-            </span>
-          </button>
+          <Button05
+            text="SEE HOW 327 DOES IT"
+            onClick={onComplete}
+          />
         </motion.div>
       </div>
 

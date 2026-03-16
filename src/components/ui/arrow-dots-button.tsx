@@ -3,11 +3,13 @@ import React from 'react';
 interface Button05Props {
   text?: string;
   href?: string;
+  onClick?: () => void;
 }
 
 export const Button05: React.FC<Button05Props> = ({
   text = 'Arrow-Dots',
-  href = '#contact'
+  href = '#contact',
+  onClick
 }) => {
   const renderDots = () => {
     const dotValues = [2, 1, 0, 1, 2];
@@ -33,7 +35,16 @@ export const Button05: React.FC<Button05Props> = ({
   };
 
   return (
-    <a href={href} className="button05 w-inline-block">
+    <a
+      href={href}
+      className="button05 w-inline-block"
+      onClick={(e) => {
+        if (onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+    >
       <span className="button05_bg"></span>
       <span
         data-text={text}
