@@ -36,11 +36,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.1),transparent_50%)]" />
-      </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center max-w-4xl">
         <motion.div
@@ -77,13 +74,13 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           transition={{ delay: 0.5, duration: 1 }}
           className="relative w-full h-full flex items-end justify-center"
         >
-          <div className="relative w-full max-w-[800px] h-[800px] translate-y-[50%]">
+          <div className="relative w-full max-w-[1200px] h-[1200px] translate-y-[50%]">
             <Globe config={GLOBE_CONFIG} className="!max-w-none !w-full" />
           </div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </motion.div>
   );
 }
