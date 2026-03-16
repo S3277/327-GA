@@ -61,9 +61,6 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-4 sm:mb-5 md:mb-6 italic px-2">
             And you didn't even notice.
           </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 font-light leading-relaxed max-w-3xl mx-auto px-2">
-            Most info coaches are sitting on a goldmine and converting like amateurs. I come in, tear apart your funnel, and rebuild it into something that actually closes — VSL, copy, automation, community. All of it.
-          </p>
         </motion.div>
 
         <motion.div
