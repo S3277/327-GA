@@ -53,6 +53,17 @@ export function Onboarding({ onComplete }: OnboardingProps) {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="mb-6 sm:mb-8"
+        >
+          <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter">
+            327
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="mb-8 sm:mb-10 md:mb-12"
         >
