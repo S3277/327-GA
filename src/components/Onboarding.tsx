@@ -54,9 +54,14 @@ export function Onboarding({ onComplete }: OnboardingProps) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-6 sm:mb-8"
+          className="mb-6 sm:mb-8 flex flex-col items-center"
         >
-          <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter">
+          <img
+            src='/IMG_3904.png'
+            alt='327 Logo'
+            className='h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 rounded object-cover mb-4'
+          />
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter">
             327
           </div>
         </motion.div>
